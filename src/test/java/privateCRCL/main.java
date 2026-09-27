@@ -16,13 +16,20 @@ public class main {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.google.com/");
-        driver.get("https://dev-business.privatecrcl.com/");
+        driver.get("https://v1833-web-app-17c30ac5f6c3.herokuapp.com/admin-console/login");
+        driver.findElement(By.id("email")).sendKeys("fatima.ahmad@nextgeni.com");
+        driver.findElement(By.id("password")).sendKeys("secret#110");
+        driver.findElement(By.xpath("//button[text()='Login']")).click();
+        Thread.sleep(3000);
+/*
+
+        //driver.get("https://dev-business.privatecrcl.com/");
+
 
         //Login with valid email and password
-        driver.findElement(By.id("email")).sendKeys("business.qa@privatecrcl.com");
-        driver.findElement(By.id("password")).sendKeys("12345678");
-        driver.findElement(By.xpath("//button[text()='Sign In']")).click();
-        Thread.sleep(3000);
+       // driver.findElement(By.id("email")).sendKeys("business.qa@privatecrcl.com");
+       // driver.findElement(By.id("password")).sendKeys("12345678");
+      //  driver.findElement(By.xpath("//button[text()='Sign In']")).click();
 
         //Tap on profile and logout the app
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
